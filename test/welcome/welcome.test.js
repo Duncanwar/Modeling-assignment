@@ -1,7 +1,7 @@
 import { use, request } from 'chai';
 import chaiHttp from 'chai-http';
 import { expect } from 'chai';
-import server from '../index';
+import server from '../../index';
 
 use(chaiHttp)
 
