@@ -11,11 +11,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-    res.send("Welcome")
+    res.status(200).json({message : "Welcome"})
 });
 // finally, start the server
 const server = app.listen(process.env.PORT || 5000, () => {
-console.log(`Listen on port ${server.address().port}`);
+console.log(`Listen on port `);
 });
 
-export default app;
+export default server;
