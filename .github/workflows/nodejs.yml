@@ -1,0 +1,24 @@
+name: Nawe Ngwino Integration Test
+
+on: [push]
+
+jobs:
+     build:
+     runs-on: ubuntu-latest
+     strategy:
+     matrix:
+     node-version: 13.14.x
+
+     steps:
+     -name: Check the repository code
+     uses: actions/checkout@v1
+     -name: Use Node.js certain version
+     uses: actions/setup-node@v1
+     with:
+     node-version: ${{matrix.node-version}}
+
+     -name: Install dependencies
+     run: |
+     npm ci
+     npm test
+     
