@@ -1,6 +1,6 @@
 name: Integration Tests CI
 
-on: [push]
+on: [pull_request]
 
 jobs:
   build:
@@ -50,8 +50,8 @@ jobs:
         #   FACEBOOK_CLIENT_SECRET: ${{ secrets.FACEBOOK_CLIENT_SECRET }}
         #   SUPER_ADMIN_PASSWORD: ${{ secrets.SUPER_ADMIN_PASSWORD }}
 
-      #   # Save coverage report in Coveralls
-      # - name: Coveralls GitHub Action
-      #   uses: coverallsapp/github-action@v1.1.2
-      #   with:
-      #     github-token: ${{ secrets.GITHUB_TOKEN }}
+        # Save coverage report in Coveralls
+      - name: Coveralls GitHub Action
+        uses: coverallsapp/github-action@v1.1.2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
