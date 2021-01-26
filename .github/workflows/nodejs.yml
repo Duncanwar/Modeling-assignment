@@ -1,6 +1,6 @@
 name: Integration Tests CI
 
-on: [pull_request]
+on: [push]
 
 jobs:
   build:
@@ -35,7 +35,7 @@ jobs:
         run: |
           npm ci
           npm test
-          
+          npm run coverage
         # env:
         #   TEST_DATABASE_URL: ${{ secrets.TEST_DATABASE_URL }}
         #   REDIS_URL: ${{ secrets.REDIS_URL }}
