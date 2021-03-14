@@ -7,10 +7,17 @@
   "author": "Duncanwar <semunda9@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "prestart": "npm run migrations && npm run seed",
     "start": "babel-node index.js",
     "dev": "nodemon --exec babel-node index.js",
     "test": "nyc mocha -r @babel/register ./test/**/*.js",
-    "coverage": "nyc --reporter=lcov npm test"
+    "coverage": "nyc --reporter=lcov npm test",
+    "create-db": "npx sequelize-cli db:create",
+    "drop-db": "npx sequelize-cli db:drop",
+    "migrations": "npx sequelize-cli db:migrate",
+    "undo-migrations": "npx sequelize-cli db:migrate:undo:all",
+    "seed": "npx sequelize-cli db:seed:all",
+    "undo-seed": "npx sequelize-cli db:seed:undo:all"
   },
   "dependencies": {
     "@babel/cli": "^7.12.10",
@@ -29,7 +36,8 @@
     "nyc": "^15.1.0",
     "pg": "^8.5.1",
     "pg-hstore": "^2.3.3",
-    "sequelize": "^6.5.0"
+    "sequelize": "^6.5.0",
+    "sequelize-cli": "^6.2.0"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^4.15.2",
