@@ -9,17 +9,30 @@ module.exports = {
         type: Sequelize.INTEGER
       },
       firstName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
       lastName: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        allowNull: false,
       },
-      email: {
-        type: Sequelize.STRING
+      phoneNumber: {
+        allowNull:false,
+        type: Sequelize.INTEGER,
+        unique: true,
       },
       version: {
         allowNull: false,
         type: Sequelize.INTEGER
+      },
+      username:{
+        allowNull: true,
+        unique: true,
+        type: Sequelize.STRING
+      },
+      password:{
+        allowNull:true,
+        type:Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -28,6 +41,14 @@ module.exports = {
       updatedAt: {
         allowNull: false,
         type: Sequelize.DATE
+      },
+      roleId:{
+        allowNull:false,
+        type: Sequelize.INTEGER
+      },
+      isVerified:{
+        defaultValue: false,
+        type: Sequelize.BOOLEAN
       }
     });
   },
