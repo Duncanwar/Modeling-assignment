@@ -10,11 +10,12 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Roles.hasMany(models.Users,{foreignKey: "roleId", onDelete:"CASCADE"} )
     }
   };
   Roles.init({
     roleName: DataTypes.STRING,
+    description: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Roles',
