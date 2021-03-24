@@ -3,6 +3,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import indexdb from "./models/index.js";
+import Routes from "./src/routes/index"
 
 dotenv.config();
 
@@ -11,7 +12,7 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}))
-
+app.use(Routes);
 app.get("/", (req, res) => {
     res.status(200).json({message : "Welcome"})
 });
