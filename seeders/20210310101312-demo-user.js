@@ -12,7 +12,7 @@ module.exports =  {
     },
     {
       email:"admin@gmai.com",
-      fullName:"duncan",
+      fullName:"ndanyuzwe",
       password:"1212",
       roleId: 2,
       createdAt: new Date(),
@@ -20,7 +20,7 @@ module.exports =  {
     },
     {
       email:"seller@gmai.com",
-      fullName:"duncan",
+      fullName:"semugeshi",
       password:"1212",
       roleId: 3,
       createdAt: new Date(),

@@ -1,7 +1,7 @@
 /* eslint-disable require-jsdoc */
 import models from "../../models/index";
 
-const { Users } = models;
+const { Users,Roles } = models;
 /**
  * @description This service deals with the User model
  */
@@ -25,10 +25,16 @@ export default class UserServices {
   static async getUserByIdOrEmail(value) {
     let user;
     if (typeof value === "string") {
-      user = await Users.findOne({ where: { email: value } });
+      user = await Users.findOne({ where: { email: value },
+      include:[{
+        model:Roles, as:"role"
+      }] });
       return user;
     }
-    return await Users.findOne({ where: { id: value } });
+    return await Users.findOne({ where: { id: value },
+      include:[{
+        model:Roles, as:"role"
+      }] });
   }
 
   /**

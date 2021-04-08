@@ -14,8 +14,6 @@ export default class RoleService {
 
   static async update(id, data) {
     const user = await Roles.update(data, { where: { id } });
-    console.log(user);
-
     return user;
   }
 

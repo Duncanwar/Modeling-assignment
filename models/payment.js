@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       Payments.belongsTo(models.Orders, { foreignKey: "orderId" });
+      Payments.hasMany(models.PaymentStates,{ foreignKey:"paymentId"})
     }
   }
   Payments.init({

@@ -2,8 +2,6 @@ import UserService from "../services/User.services.js";
 import helper from "../utils/helpers.js";
 import responses from "../utils/responses.js";
 import statusCode from "../utils/statusCode";
-
-// import userUpdateValidation from "../validation/userUpdate.validation";
 import customMessage from "../utils/customMessage";
 import help from "../utils/helpers"
 
@@ -74,8 +72,6 @@ export default class UserControllers {
     } catch (e) {
       return next(new Error(e));
     }
-  
-
   }
 
   /**

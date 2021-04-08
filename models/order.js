@@ -14,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Orders.belongsTo(models.Cars, { foreignKey: "carId" });
       Orders.belongsTo(models.Users, { foreignKey: "userId" });
-      Orders.hasMany(models.OrderStates, { foreignKey: "orderStateId" });
-      Orders.hasOne(models.Payments, { foreignKey: "paymentId" });
+      Orders.hasMany(models.OrderStates, { foreignKey: "orderId" });
+      Orders.hasOne(models.Payments, { foreignKey: "orderId" });
     }
   }
   Orders.init({

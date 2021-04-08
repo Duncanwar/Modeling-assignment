@@ -16,6 +16,9 @@
       type: Sequelize.INTEGER,
       references:{model:"Orders",key:"id"}
     },
+    actionBy: {
+      type: Sequelize.STRING,
+    },
         createdAt: {
           allowNull: false,
           type: Sequelize.DATE

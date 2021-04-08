@@ -1,6 +1,5 @@
 import RoleService from "../services/Roles.services"
 
-
 const {create, findAll, update, remove } = RoleService;
 export default class RoleController{
 

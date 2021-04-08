@@ -5,7 +5,6 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const generateToken = (user) => {
-  console.log(user.dataValues);
   const token = jwt.sign({ id: user.dataValues.id }, process.env.JWT_SECRET);
   return token;
 };

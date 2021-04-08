@@ -17,19 +17,6 @@ if (config.url) {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }
 
-const connectDb = async () => {
-  try{
-    
-    await sequelize.authenticate();
-    console.log("able to conneecte");
-  }
-  catch(error){
-    console.error("Unable to conneecte");
-  }
-}
-
-connectDb();
-
 readdirSync(__dirname)
   .filter(file => {
     return (file.indexOf('.') !== 0) && (file !== basename) && (file.slice(-3) === '.js');
