@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import roles from "./api/role.router"
+import user from "./api/user.route"
 
 dotenv.config();
 
@@ -10,6 +11,7 @@ const baseUrl = `/api/${apiVersion}`
 
 router.get('/api/',(req, res) =>{res.json({mes:"api"})})
 
-router.use(baseUrl, roles);
+router.use("/", roles);
+router.use("/",user)
 
 export default router;
