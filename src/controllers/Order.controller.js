@@ -4,6 +4,7 @@ import OrderStateService from "../services/OrderState.service"
 import PaymentService from "../services/Payment.service";
 import PaymentStateService from "../services/PaymentState.service";
 
+
 export default class OrderController {
     static async createOrder(req,res){
     let order = {userId:req.User.id, status:"CREATED", carId:req.body.carId};
@@ -16,5 +17,9 @@ export default class OrderController {
     let paymentState = {paymentId:payment.id, status:"UNPAID", actionBy:user.dataValues.fullName}
     paymentState = await PaymentStateService.create(paymentState);
     return res.status(201).json({order,orderState,payment,paymentState})
+    }
+    static async getOneByOrderId(req,res){
+        const order = await Order.findByOrderByUserId(req.User.id)
+        return res.json({order})
     }
 }
