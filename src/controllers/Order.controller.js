@@ -4,7 +4,6 @@ import OrderStateService from "../services/OrderState.service"
 import PaymentService from "../services/Payment.service";
 import PaymentStateService from "../services/PaymentState.service";
 
-
 export default class OrderController {
     static async createOrder(req,res){
     let order = {userId:req.User.id, status:"CREATED", carId:req.body.carId};
