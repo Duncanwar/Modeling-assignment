@@ -16,15 +16,15 @@
  });
 
 /**
-* @description returns error response
+* @description returns data response
 * @param {object} res response
 * @param {number} code status code
 * @param {string} error error message
 * @returns {object} returns json object
 */
-const errorResponse = (res, code, error) => {
+const errorResponse = (res, code, data) => {
  res.status(code).json({
-   error,
+   data,
  });
 };
 

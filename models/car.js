@@ -4,16 +4,11 @@ module.exports = (sequelize, DataTypes) => {
     {
       model: DataTypes.STRING,
       manufacturerYear: DataTypes.INTEGER,
-      carTypeId: DataTypes.INTEGER,
+      type: DataTypes.STRING,
+      description: DataTypes.STRING,
+      price: DataTypes.DOUBLE,
     },
     {}
   );
-
-  Cars.associate = models => {
-    Cars.belongsTo(models.CarTypes, {
-      as: "CarType",
-      foreignKey: "carTypeId"
-    });
-  };
   return Cars;
 };

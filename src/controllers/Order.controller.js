@@ -17,4 +17,8 @@ export default class OrderController {
     paymentState = await PaymentStateService.create(paymentState);
     return res.status(201).json({order,orderState,payment,paymentState})
     }
+    static async getOneByOrderId(req,res){
+        const order = await Order.findByOrderByUserId(req.User.id)
+        return res.json({order})
+    }
 }

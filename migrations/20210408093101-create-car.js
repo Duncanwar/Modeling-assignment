@@ -12,12 +12,16 @@ module.exports = {
         type: Sequelize.STRING
       },
       manufacturerYear: {
+        type: Sequelize.INTEGER
+      },
+      description: {
         type: Sequelize.STRING
       },
-      carTypeId: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        references: {model: "CarTypes", key:"id"}
+      type: {
+        type: Sequelize.STRING
+      },
+      price:{
+        type: Sequelize.DOUBLE
       },
       createdAt: {
         allowNull: false,
