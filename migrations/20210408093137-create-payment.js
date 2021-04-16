@@ -17,6 +17,10 @@ module.exports = {
         type: Sequelize.ENUM("UNPAID", "FULLYPAID"),
         defaultValue:"UNPAID",
       },
+      amount: {
+        type: Sequelize.DOUBLE,
+        allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
