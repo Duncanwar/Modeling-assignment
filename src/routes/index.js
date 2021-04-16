@@ -4,6 +4,7 @@ import roles from "./api/role.router"
 import user from "./api/user.route"
 import order from "./api/order.route";
 import car from './api/car.route';
+import payment from "./api/payment.route"
 
 dotenv.config();
 
@@ -16,5 +17,6 @@ router.use("/", roles);
 router.use("/", user)
 router.use("/", order)
 router.use("/", car)
+router.use("/", payment)
 
 export default router;

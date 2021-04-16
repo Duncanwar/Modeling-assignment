@@ -12,7 +12,6 @@ let sequelize;
 
 if (config.url) {
   sequelize = new Sequelize(config.url, config);
-  console.log("DB connection");
 } else {
   sequelize = new Sequelize(config.database, config.username, config.password, config);
 }

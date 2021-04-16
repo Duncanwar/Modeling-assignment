@@ -9,4 +9,7 @@ export default class CarService {
     static async create(car) {
         return await Cars.create(car);
     }
+    static async findOne(id){
+        return await Cars.findOne({where: {id:id}})
+    }
 }

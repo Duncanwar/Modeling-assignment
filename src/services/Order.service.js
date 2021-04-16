@@ -23,4 +23,7 @@ export default class OrderService{
     static async findOne(id){
         return await Orders.findOne({where: {id:id}})
     }
+    static async findAll(id){
+        return await Orders.findAll();
+    }
 }
