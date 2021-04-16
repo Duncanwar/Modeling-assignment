@@ -32,4 +32,7 @@ export default class PaymentController {
     paymentState = await PaymentStateService.create(paymentState);
     return res.status(200).json({message:"payments successfully done", payments,paymentState});
 }
+static async getOne(req,res){
+    
+}
 }
