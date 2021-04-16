@@ -21,7 +21,8 @@ module.exports = (sequelize, DataTypes) => {
   Orders.init({
     userId: DataTypes.INTEGER,
     carId: DataTypes.STRING,
-    status: DataTypes.ENUM("CREATED", "RECEIVED", "CANCEL")
+    status: DataTypes.ENUM("CREATED", "RECEIVED", "CANCEL"),
+    amount: DataTypes.DOUBLE
   }, {
     sequelize,
     modelName: "Orders",

@@ -18,7 +18,8 @@ module.exports = (sequelize, DataTypes) => {
   }
   Payments.init({
     orderId: DataTypes.INTEGER,
-    status: DataTypes.ENUM("UNPAID", "FULLYPAID")
+    status: DataTypes.ENUM("UNPAID", "FULLYPAID"),
+    amount: DataTypes.DOUBLE
   }, {
     sequelize,
     modelName: "Payments",

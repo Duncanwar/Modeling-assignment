@@ -20,6 +20,10 @@ module.exports = {
         type: Sequelize.ENUM("CREATED", "RECEIVED", "CANCEL"),
         defaultValue: "CREATED"
       },
+      amount: {
+        type: Sequelize.DOUBLE,
+         allowNull: false,
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE
