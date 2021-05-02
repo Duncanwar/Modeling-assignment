@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/payment',tokenAuthentication,PaymentController.pay);
 router.get('/payment/:id',tokenAuthentication,PaymentController.getOne);
-router.get('/payment', tokenAuthentication,PaymentController.getAll);
+//router.get('/payment', tokenAuthentication,PaymentController.getAll);
 
 
 export default router;

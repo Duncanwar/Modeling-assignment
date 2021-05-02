@@ -11,7 +11,7 @@ export default async (req, res, next) => {
     return responses.successResponse(res,401,undefined,"You must be logged in")
   }
   const token = authorization.replace('Bearer ', '');
-  const payload = verifyToken(token);
+  const payload = await verifyToken(token);
   const { id } = payload;
   const role = await  getUserByIdOrEmail(id);
   const {dataValues} = role.dataValues.role

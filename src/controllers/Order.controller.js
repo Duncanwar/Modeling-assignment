@@ -37,6 +37,7 @@ export default class OrderController {
             return res.status(403).json({error: "It is already canceled"})
         }
         if(orderRecieved.status === "RECEIVED"){
+            
             return res.status(403).json({error: "it is already received"})
         }
 
@@ -53,6 +54,9 @@ export default class OrderController {
         if(order.status === "CANCEL"){
             return res.status(403).json({error: "It is already canceled"})
         }
+        if(order.status === "RECEIVED"){
+            return res.status(403).json({error: "You cannot cancel received"})
+        }
         const orderstate = {status:"CANCEL"}
         await Order.update(orderstate, req.body.orderId)
         const user = await UserServices.getUserByIdOrEmail(req.User.id)
@@ -62,9 +66,9 @@ export default class OrderController {
     }
 
     static async getAll(req, res){
-        if(req.User.role !== "ADMIN"){
-            return res.status(403).json({error:"It is for the admins only"})
-        }
+        // if(req.User.role !== "ADMIN"){
+        //     return res.status(403).json({error:"It is for the admins only"})
+        // }
         const orders = await Order.findAll()
         return res.json({orders})
     }
